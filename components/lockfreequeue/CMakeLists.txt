@@ -1,0 +1,14 @@
+get_filename_component(PROJECT_FOLDER ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+
+# file(GLOB_RECURSE SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
+
+# add_library(${PROJECT_FOLDER} OBJECT 
+#     ${SOURCES}
+# )
+
+add_library(${PROJECT_FOLDER} INTERFACE)
+
+target_include_directories(${PROJECT_FOLDER} INTERFACE
+    # $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
